@@ -68,7 +68,8 @@ function packageRelease {
   fi
   json='{"env": "''"}'
   echo $json > webapp/supersonic.config.json
-  mv webapp $release_dir/
+  mkdir -p $release_dir/supersonic
+  mv webapp $release_dir/supersonic/
   # package java service
   tar xvf $service_name-bin.tar.gz
   mv $service_name/* $release_dir/
