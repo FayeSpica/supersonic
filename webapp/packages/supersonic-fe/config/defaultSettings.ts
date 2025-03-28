@@ -20,7 +20,7 @@ const Settings: ProLayoutProps & {
   //   ignoreFlatMenu: true,
   // },
 };
-export const publicPath = '/webapp/';
-export const basePath = '/webapp/';
+export const publicPath = '/supersonic/webapp/';
+export const basePath = '/supersonic/webapp/';
 
 export default Settings;

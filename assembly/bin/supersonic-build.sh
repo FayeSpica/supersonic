@@ -85,8 +85,10 @@ if [ "$service" == "webapp" ]; then
   buildWebapp
   target_path=$projectDir/launchers/$STANDALONE_SERVICE/target/classes
   tar xvf $projectDir/webapp/supersonic-webapp.tar.gz -C $target_path
-  rm -rf $target_path/webapp
-  mv $target_path/supersonic-webapp $target_path/webapp
+  mkdir -p $target_path/supersonic/webapp
+  rm -rf $target_path/supersonic/webapp
+
+  mv $target_path/supersonic-webapp $target_path/supersonic/webapp
 else
   buildJavaService $service
   buildWebapp

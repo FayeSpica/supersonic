@@ -10,16 +10,16 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/webapp/**").addResourceLocations("classpath:/webapp/");
+        registry.addResourceHandler("/supersonic/webapp/**").addResourceLocations("classpath:/supersonic/webapp/");
 
-        registry.addResourceHandler("/favicon.ico").addResourceLocations("classpath:/webapp/");
+        registry.addResourceHandler("/favicon.ico").addResourceLocations("classpath:/supersonic/webapp/");
     }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("redirect:/webapp/");
-        registry.addViewController("/webapp/").setViewName("forward:/webapp/index.html");
-        registry.addViewController("/webapp/**/{path:[^\\.]*}")
-                .setViewName("forward:/webapp/index.html");
+        registry.addViewController("/").setViewName("redirect:/supersonic/webapp/");
+        registry.addViewController("/supersonic/webapp/").setViewName("forward:/supersonic/webapp/index.html");
+        registry.addViewController("/supersonic/webapp/**/{path:[^\\.]*}")
+                .setViewName("forward:/supersonic/webapp/index.html");
     }
 }
